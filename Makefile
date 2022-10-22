@@ -440,6 +440,7 @@ TF_LDFLAGS		+=	$(subst --,-Xlinker --,$(TF_LDFLAGS_$(ARCH)))
 else
 TF_LDFLAGS		+=	--fatal-warnings -O1
 TF_LDFLAGS		+=	--gc-sections
+TF_LDFLAGS		+=	--no-warn-rwx-segments
 # ld.lld doesn't recognize the errata flags,
 # therefore don't add those in that case
 ifeq ($(findstring ld.lld,$(notdir $(LD))),)
